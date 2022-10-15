@@ -1,0 +1,9 @@
+#/etc/logrotate.d/sleepydog
+/var/log/sleepydog.log {
+    copytruncate
+    missigok
+    monthly
+    maxsize 10M
+    rotate 10
+    compress
+}

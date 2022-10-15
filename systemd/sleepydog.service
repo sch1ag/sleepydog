@@ -1,0 +1,12 @@
+#/etc/systemd/system/sleepydog.service
+[Unit]
+Description=sleepydog pause detector
+After=local-fs.target
+
+[Service]
+EnvironmentFile=/etc/sysconfig/sleepydog
+ExecStart=/usr/bin/sleepydog -l $SLEEPYDOG_LOG -s $SLEEPYDOG_SLEEP -t $SLEEPYDOG_THRESHOLD
+ExecStop=/bin/pkill sleepydog
+
+[Install]
+WantedBy=multi-user.target
