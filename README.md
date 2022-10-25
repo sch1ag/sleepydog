@@ -24,10 +24,15 @@ Syntax: sleepydog [-s desired_sleep_duration_ms] [-t sleep_duration_threshold_ms
 
 * AIX
 
-  IBM xlc compiler needed to build binary.
-  ~~~
-  /usr/vac/bin/xlc_r -DOSAIX -o sleepydog sleepydog.c
-  ~~~
+  * GCC
+    ~~~
+    gcc -std=c11 -pthread -DOSAIX -o sleepydog sleepydog.c
+    ~~~
+
+  * IBM xlc compiler
+    ~~~
+    /usr/vac/bin/xlc_r -DOSAIX -o sleepydog sleepydog.c
+    ~~~
 
 ### Log analysis example
 
