@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-std=c11 -pthread
 
-.PHONY: clean aixcheck
+.PHONY: clean
 
 sleepydog: sleepydog.c
 	$(CC) $(CFLAGS) -o $@ $^
