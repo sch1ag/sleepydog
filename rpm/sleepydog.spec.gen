@@ -9,9 +9,9 @@ License:        GNU GPL version 2
 URL:            https://github.com/sch1ag/slonic
 Source0:        %{name}-v%{version}-%{build_ver}.tar.gz
 
-#Requires:       bash
-#Requires:       VRTSvcs
-BuildRequires: systemd
+Requires:       logrotate
+BuildRequires:  systemd
+AutoReq:        yes
 
 #BuildArch:      noarch
 
@@ -22,17 +22,14 @@ lightweight execution delays detector
 %setup -n %{name}-%{version}-%{build_ver}
 
 %build
-
 make
 
 %install
-
 %{__install} -d %{buildroot}%{_bindir} %{buildroot}%{_unitdir} %{buildroot}%{_sysconfdir}/logrotate.d %{buildroot}%{_sysconfdir}/sysconfig
 %{__install} -m 755 sleepydog                               %{buildroot}%{_bindir}/sleepydog
 %{__install} -m 644 systemd/sleepydog.service               %{buildroot}%{_unitdir}/sleepydog.service
 %{__install} -m 644 logrotate.d/sleepydog                   %{buildroot}%{_sysconfdir}/logrotate.d/sleepydog
 %{__install} -m 644 sysconfig/sleepydog                     %{buildroot}%{_sysconfdir}/sysconfig/sleepydog
-
 
 %files
 %defattr(-,root,root)
@@ -40,6 +37,7 @@ make
 %{_prefix}/lib/systemd/system/sleepydog.service
 %config(noreplace) %{_sysconfdir}/logrotate.d/sleepydog
 %config(noreplace) %{_sysconfdir}/sysconfig/sleepydog
+%ghost %{_localstatedir}/log/sleepydog.log
 
 %doc
 
