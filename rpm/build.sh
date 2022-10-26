@@ -25,6 +25,6 @@ git log --format="- %cd (%h) %s%d" --no-merges | sed -r 's/[0-9]+:[0-9]+:[0-9]+ 
 git archive --format=tar.gz --prefix=${PKG_NAME}-${VERSION}-${BUILD}/ -o ${SCRIPTDIR}/SOURCES/${PKG_NAME}-v${VERSION}-${BUILD}.tar.gz HEAD
 
 #clear old rpms
-rm -rf ${SCRIPTDIR}/RPMS/*.rpm
+#rm -rf ${SCRIPTDIR}/RPMS/*.rpm
 #build new one
 rpmbuild -bb --define "_topdir ${SCRIPTDIR}" ${SCRIPTDIR}/SPECS/${SPEC_FILE}
