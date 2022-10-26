@@ -58,4 +58,4 @@ Syntax: sleepydog [-s desired_sleep_duration_ms] [-t sleep_duration_threshold_ms
     3. Count of CPUs with delays in the correspondind time span
     4. Duration of the longest execution delay
     
-  > Note: SMI always cause simultaneous delay on all CPUs
+  > Note: SMI always causes simultaneous delay on all CPUs
