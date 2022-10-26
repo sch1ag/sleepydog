@@ -13,7 +13,7 @@ Requires:       logrotate
 BuildRequires:  systemd
 AutoReq:        yes
 
-%debug_package  %{nil}
+%define debug_package  %{nil}
 
 %description
 lightweight execution delays detector
@@ -51,4 +51,3 @@ make
 %systemd_postun_with_restart sleepydog.service
 
 %changelog
-
