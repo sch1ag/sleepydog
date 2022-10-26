@@ -13,7 +13,7 @@ Requires:       logrotate
 BuildRequires:  systemd
 AutoReq:        yes
 
-#BuildArch:      noarch
+%debug_package  %{nil}
 
 %description
 lightweight execution delays detector
