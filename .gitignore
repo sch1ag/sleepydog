@@ -1,2 +1,5 @@
 /sleepydog
-/rpm/{BUILD,RPMS,SOURCES,SPECS,SRPMS} 
+rpm/BUILD/
+rpm/RPMS/
+rpm/SOURCES/
+rpm/SPECS/
